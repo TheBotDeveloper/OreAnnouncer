@@ -1,0 +1,12 @@
+/*
+!.gitignore
+!pom.xml
+!*.md
+!LICENSE
+
+!/bukkit
+/bukkit/*
+!/bukkit/src
+!/bukkit/pom.xml
+
+!/images

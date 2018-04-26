@@ -1,0 +1,36 @@
+name: OreAnnouncer
+author: AlessioDP
+website: https://alessiodp.com/
+main: com.alessiodp.oreannouncer.OreAnnouncer
+version: ${project.version}
+description: Send a broadcast whenever someone dig a block
+commands:
+  oreannouncer:
+    aliases: oa
+    description: Main command of OreAnnouncer
+permissions:
+  oreannouncer.alertupdates:
+    description: Send a message if there is an update
+  oreannouncer.bypass.announce:
+    description: Bypass announce on dig
+  oreannouncer.bypass.place:
+      description: Bypass ore announce on own placed blocks
+  oreannouncer.cmd.help:
+    description: Allow access to /oa help
+  oreannouncer.cmd.hide:
+    description: Allow access to /oa hide
+  oreannouncer.cmd.reload:
+    description: Allow access to /oa reload
+  oreannouncer.see:
+    description: See announced messages
+  oreannouncer.*:
+    default: op
+    description: All permissions are granted
+    children:
+      oreannouncer.alertupdates: true
+      oreannouncer.bypass.announce: true
+      oreannouncer.bypass.place: true
+      oreannouncer.help: true
+      oreannouncer.hidealerts: true
+      oreannouncer.reload: true
+      oreannouncer.see: true

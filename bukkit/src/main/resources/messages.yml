@@ -1,0 +1,41 @@
+#
+# OreAnnouncer messages file
+#
+# For a better configuration:
+# - Use Notepad++
+#   - View -> Symbols -> Show White Space and TAB (Active)
+#   - Don't use arrows (tabs), but spaces
+# - Set format (syntax) editor to YAML
+#
+
+# / = = = = = = = = = = = = = = = = \
+# |      OREANNOUNCER MESSAGES      |
+# \ = = = = = = = = = = = = = = = = /
+oreannouncer:
+  # Special tags: %version% = The version of the update | %thisversion% = The version of your plugin
+  update-available: "&9New version of OreAnnouncer found: %version% (Current: %thisversion%)"
+  no-permission: "&cYou do not have access to that command"
+  configuration-reloaded: "&aConfiguration reloaded"
+  no-console: "You need to be a player to perform this command"
+  not-found: "&cCommand not found"
+  help:
+  - "&7===============[ &2OreAnnouncer &7]==============="
+  - "&a/oa help &7- Print this help page"
+  - "&a/oa hide &7- Hide announces"
+  - "&a/oa reload &7- Reload the configuration"
+
+# / = = = = = = = = = = = = = = = = \
+# |        BLOCKS  MESSAGES         |
+# \ = = = = = = = = = = = = = = = = /
+blocks:
+  prevent-break: "&cThere is too low light, you cannot break it!"
+
+# / = = = = = = = = = = = = = = = = \
+# |      HIDE ALERT  MESSAGES       |
+# \ = = = = = = = = = = = = = = = = /
+hide-alert:
+  set-on: "&aHide alerts set to true"
+  set-off: "&aHide alerts set to false"
+
+dont-edit-this:
+  messages-version: 1

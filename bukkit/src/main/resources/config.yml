@@ -1,0 +1,105 @@
+#
+# OreAnnouncer configuration file
+#
+# For a better configuration:
+# - Use Notepad++
+#   - View -> Symbols -> Show White Space and TAB (Active)
+#   - Don't use arrows (tabs), but spaces
+# - Set format (syntax) editor to YAML
+#
+
+# / = = = = = = = = = = = = = = = = \
+# |      OREANNOUNCER SETTINGS      |
+# \ = = = = = = = = = = = = = = = = /
+oreannouncer:
+  updates:
+    # Check for updates, recommended. OreAnnouncer will check for updates when the server finish to load
+    check: true
+    # Send a message to admins if an update is available
+    warn: true
+
+# / = = = = = = = = = = = = = = = = \
+# |         BLOCKS SETTINGS         |
+# \ = = = = = = = = = = = = = = = = /
+blocks:
+  # Bypass this with oreannouncer.bypass.place
+  prevent-announce-on-block-placed: true
+  # If true alert on console about a wrong block message
+  # If you want disable some lines set this to false to remove alerts
+  alert-wrong-messages: true
+  light-level:
+    # Enable light level system
+    enable: false
+    # Send the alert only when the light level is lower than the maximum
+    alert-only-if-lower: true
+    # Prevent the player to break the block if light level is lower than the maximum
+    prevent-break: false
+  # Tags:
+  # %player% = Player name
+  # %lightlevel% = Light level
+  # %number% = Number of ores
+  # %x%, %y%, %z% = x,y,z axis
+  # Light level: alert when in game light level is <= of "max-light-level", 100 is everytime, 0 only when it's dark
+  list:
+    DIAMOND_ORE:
+      max-light-level: 100
+      single: "&6%player% &efound %number% diamond."
+      multiple: "&6%player% &efound %number% diamonds."
+      coordinates:
+        single: "&6%player% &efound %number% diamond. &7[x:%x%&7 z:%z%&7]"
+        multiple: "&6%player% &efound %number% diamonds. &7[x:%x%&7 z:%z%&7]"
+    EMERALD_ORE:
+      max-light-level: 0
+      single: "&6%player% &efound %number% emerald."
+      multiple: "&6%player% &efound %number% emeralds."
+
+# / = = = = = = = = = = = = = = = = \
+# |        STORAGE  SETTINGS        |
+# \ = = = = = = = = = = = = = = = = /
+storage:
+  # Database file name (used to save player settings)
+  file-name: "data.yml"
+
+# / = = = = = = = = = = = = = = = = \
+# |      COORDINATES  SETTINGS      |
+# \ = = = = = = = = = = = = = = = = /
+coordinates:
+  # Print coordinates when player pick a block
+  enable: false
+  # Minimum players online to enable printing of coordinates (0=everytime)
+  minimum-players: 0
+  random-hide:
+    # Hide some coordinates (Example: (x:129 y:-XXX)
+    randomize: true
+    # How many coordinates to hide
+    count: 1
+    # Choose prefix to hide (&k = magic color chat)
+    # Tip: When inserting coordinates add a reset chat color after (Ex: &7(x:%x%&7)
+    prefix: "&k"
+    # Replace the real number, used to prevents people reading the coordinate even if hidden with &k
+    obfuscate: true
+
+# / = = = = = = = = = = = = = = = = \
+# |          LOG  SETTINGS          |
+# \ = = = = = = = = = = = = = = = = /
+log:
+  # Enable log system
+  enable: false
+  # Log format
+  # %date% = Date as yyyy-MM-dd
+  # %time% = Time as HH:mm:ss
+  # %level% = Mode of the message
+  # %message% = Message
+  format: "%date% [%time%] %message%"
+  # Print messages on console
+  print-console: true
+  # Levels:
+  # 1: Log common OreAnnouncer messages
+  # 2: Log broadcasted messages
+  # 3: Debug level (Log a lot of events)
+  mode: 2
+  # Save logs into this file
+  file: "log.txt"
+
+dont-edit-this:
+  config-version: 6
